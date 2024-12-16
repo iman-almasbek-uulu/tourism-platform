@@ -1,0 +1,15 @@
+#NavMap {
+    width: 100%;
+
+    .icon {
+        path {
+
+        }
+        &:hover path {
+            filter: drop-shadow(2px 3px 1px rgb(237, 7, 7));
+        }
+
+    }
+    
+    
+}

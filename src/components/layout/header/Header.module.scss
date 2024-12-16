@@ -1,0 +1,112 @@
+#Header {
+    width: 100%;
+    padding: 20px 0;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    background: url('../../../images/Rectangle\ 18.jpg');
+    // background-color:rgba(237, 193, 193, 0.5);
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .logo {
+        width: 100%;
+        max-width: 100px;
+
+    }
+    nav {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+
+        a {
+            font-family: "Frank Ruhl Libre";
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 30.98px;
+            color: #004A60;
+            .active {
+                color: white;
+            }
+            @media (max-width: 1034px) {
+                font-size: 18px;
+                line-height: 26px;
+            }
+        }
+    }
+    .block {
+        display: flex;
+        gap: 30px;
+        @media (max-width: 1034px) {
+            flex-direction: column-reverse;
+            gap: 5px;            
+        }
+        select {
+            padding: 10px 25px;
+            border: 1px solid #004A60;
+            border-radius: 8px;
+            background: none;
+            font-family: "Frank Ruhl Libre";
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 25.82px;
+            @media (max-width: 1034px) {
+                font-size: 18px;
+            }
+        }
+        button {
+            font-family: "Frank Ruhl Libre";
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 25.82px;
+            border-radius: 8px;
+            padding: 10px 25px;
+            background: #004A60;
+            color: white;
+            @media (max-width: 1034px) {
+                font-size: 18px;
+                width: auto;
+            }
+        }
+    }
+    .block2 {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        button {
+            font-family: "Frank Ruhl Libre";
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 25.82px;
+            border-radius: 8px;
+            padding: 5px 15px;
+            background: #004A60;
+            color: white;
+
+        }
+        img {
+            width: 22px;
+            height: 18px;
+            cursor: pointer;
+        }
+    }
+    .modal {
+        position: absolute;
+        border-radius: 30px;
+        right: 0;
+        top: 80px;
+        background-color: #004A60;
+        width: 300px;
+        padding: 30px;
+        min-height: 200px;
+        nav {
+            display: flex;
+            flex-direction: column;
+            a {
+                color: white;
+            }
+        }
+    } 
+}
