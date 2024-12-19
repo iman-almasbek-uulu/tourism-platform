@@ -1,11 +1,8 @@
 #Header {
     width: 100%;
     padding: 20px 0;
-    // position: absolute;
-    // top: 0;
-    // left: 0;
+    z-index: 10;
     background: url('../../../images/Rectangle\ 18.jpg');
-    // background-color:rgba(237, 193, 193, 0.5);
     .container {
         display: flex;
         align-items: center;
@@ -21,18 +18,36 @@
         gap: 30px;
         align-items: center;
 
-        a {
+        >a, .link {
             font-family: "Frank Ruhl Libre";
+            position: relative;
             font-size: 24px;
             font-weight: 700;
             line-height: 30.98px;
             color: #004A60;
+            cursor: pointer;
             .active {
                 color: white;
             }
             @media (max-width: 1034px) {
                 font-size: 18px;
-                line-height: 26px;
+                line-height: 26px;              
+            }
+        }
+
+        .links {
+            width: 150px;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            padding: 10px 40px;
+            left: 50%;
+            transform: translate(-50%,0%);
+            background: #e6e9e68e;
+            z-index: 1;
+            a {
+                font-size: 20px;
             }
         }
     }
@@ -43,10 +58,24 @@
             flex-direction: column-reverse;
             gap: 5px;            
         }
+        div {
+            position: relative;
+            cursor: pointer;
+            img {
+                position: absolute;
+                top: 21px;
+                right: 42px;
+            }
+        }
         select {
-            padding: 10px 25px;
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;    
+            padding: 10px 60px 10px 40px;
             border: 1px solid #004A60;
             border-radius: 8px;
+            color: #004A60;
             background: none;
             font-family: "Frank Ruhl Libre";
             font-size: 20px;
@@ -64,6 +93,7 @@
             border-radius: 8px;
             padding: 10px 25px;
             background: #004A60;
+            cursor: pointer;
             color: white;
             @media (max-width: 1034px) {
                 font-size: 18px;
