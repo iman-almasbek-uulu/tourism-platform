@@ -109,7 +109,7 @@ const Try = () => {
         <section id={scss.Try}>
             <div className="container">
                 <h2>{t("","","What to try in Issyk-Kul?")}</h2>
-                <div className={scss.content}>
+                <div key={tabs[currentContent].id} className={scss.content}>
                         <div className={scss.item}>
                             <h4>{t(
                                 tabs[currentContent].content.first.subtitle.russian,
@@ -129,7 +129,7 @@ const Try = () => {
                                 </div>
                                 {tabs.map((el,i) => (
                                     i !== currentContent ?  (
-                                        <div className={scss.bg}>
+                                        <div key={i} className={scss.bg}>
                                             <div></div>
                                             <img src={el.img.src} alt="" />
                                         </div>
@@ -156,7 +156,8 @@ const Try = () => {
                     <button disabled={currentContent === 0} onClick={() => setCurrentContent(--currentContent)}>-</button>
                     <div className={scss.index}>{
                         tabs.map((el,i) => (
-                        <button 
+                        <button
+                            key={i}
                             style={i === currentContent ? { background: "#004A60", borderRadius: "30px", color: "white" } : undefined} 
                             onClick={() => setCurrentContent(i)}
                         >
