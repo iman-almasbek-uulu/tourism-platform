@@ -18,7 +18,8 @@
             margin-bottom: 20px;
             line-height: 56.34px;
         }
-        @media (max-width: 490px) {
+        @media (max-width: 600px) {
+            display: none;
             font-size: 30px;
             line-height: 45.34px;
 
