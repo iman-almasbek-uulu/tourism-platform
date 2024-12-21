@@ -1,0 +1,90 @@
+#About {
+  width: 100%;
+  height: 500px;
+
+  .About {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+
+    @media (max-width: 768px) {
+      flex-wrap: wrap; 
+      justify-content: center; 
+    }
+
+    @media (max-width: 576px) {
+      padding: 20px 0; 
+    }
+  }
+
+  .herotitle {
+    color: #004a60;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 64px;
+    font-weight: 400;
+
+    @media (max-width: 1200px) {
+      font-size: 48px;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 36px;
+      text-align: center;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 28px;
+      text-align: center;
+    }
+  }
+
+  .herotext {
+    color: #242424;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.4; 
+    width: 789px; 
+    letter-spacing: 5%;
+
+    @media (max-width: 1200px) {
+      font-size: 20px;
+      width: 600px;
+      text-align: justify;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+      width: 550px;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 14px; 
+      width: 100%; 
+      text-align: center; 
+    }
+  }
+
+  .heroimg {
+    width: 384px;
+    height: 304px;
+
+    @media (max-width: 1200px) {
+      width: 300px;
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
+      width: 250px;
+      height: auto;
+    }
+
+    @media (max-width: 576px) {
+      width: 200px;
+      height: auto;
+      margin: 0 auto; 
+    }
+  }
+}
