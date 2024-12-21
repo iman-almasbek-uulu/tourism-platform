@@ -1,10 +1,9 @@
 import React from 'react';
-import Hero from './hero/Hero';
+import {Hero} from './hero/Hero';
 import About from './about/About';
 import Attractions from './attractions/Attractions';
 import Culture from './culture/Culture';
-import Map from './map/Map';
-
+import Map from './map/Map'
 const HomeComponents = () => {
     return (
         <div>

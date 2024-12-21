@@ -1,0 +1,358 @@
+
+#Hero{
+  position: relative;
+         width: 100%;
+         height: 1017px;
+       margin: 0 auto;
+         background-image: url('https://s3-alpha-sig.figma.com/img/c6a7/14c3/477eeeb0b11a5dff2a4107971b1d6d69?Expires=1735516800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=kkVQOATtckxDtprwrymmWZbIOu7I7hM-NgGA50lNqqadLlLVquIK4i2bwvWm5NfDnupR86AAF7vAS9QosgsWE7~Ej0O~MdOZYuL29vjfv-VPELV5eV1CCA7-klzanIUheA81rWELywTE1Hc3dfzKjH~JxP~wS0fMKk6IEw9JPxOnnOdCcOz9JNLXEJKmSXhOUwqOlTmd3RPuxolv6czWpXsEGXFowYbwFBgY1Dq2boSGYfWO2nBexVCaekfmVc4Ck6YJrdDJbb6BJO6u30QLiveULtDw82kmrriuXmAq8BGnovwvYxbgz3ZumN~Q8lhLjf4UWWlJZfowdK6ugCIeaA__');
+         .Hero {
+                  display: flex;
+                  align-items: center;
+                  flex-direction: column;
+
+         }
+         .pages{
+                  margin-top: 150px;
+                  color: white;
+                  width: 918px;
+                  height: 216px;
+                  font-size: 
+                  80px;
+                  font-weight: 400;
+                  text-align: center;
+                  left: 261px;
+                  top: 153px;
+         }
+        
+         .input_container {
+                 margin-top: 100px;
+                  position: relative;
+                  display: inline-block;
+              }
+              
+              .homeinput {
+                  width: 688px;
+                  height: 56px;
+                  border-radius: 30px;
+                  font-size: 24px;
+                  font-weight: 400;
+                  color: grey;
+                  border: none;
+                  padding-left: 50px;
+                  margin-right: 20px;
+ 
+              }
+              
+              .input_container::before {
+                  content: "";
+                  background-image: url('../../../../../public/images/lupa.svg'); 
+                  background-size: 24px 24px;
+                  background-repeat: no-repeat;
+                  position: absolute;
+                  left: 20px; 
+                  top: 50%;
+                  transform: translateY(-50%);
+                  width: 24px; 
+                  height: 24px;
+                
+              }
+              
+        
+         .homebtn{
+          margin-top:  100px ;
+                  width: 55px;
+                  height: 56px;
+                  border-radius: 60px;
+                  background: #004A60;
+                  border: none;
+         }
+         .pageblock{
+          
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                 
+         }
+         .hometext {
+                  width: 621px;
+                  height: 136px;
+                  margin-top: 40px;
+                  margin-left: auto; 
+                  margin-right: auto;
+                  text-align: center; 
+                  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                  font-size: 24px;
+                  font-weight: 500;
+                  color: #FFFFFF;
+                        }
+              
+         .iconsblock{
+              position: relative;   
+         }
+         .heroTwo{
+          position: absolute;
+          top: 730px;
+          left: 0;
+          width: 100%;
+          height: 288px;
+                  background: white;
+                  backdrop-filter: blur(15px);
+                  -webkit-backdrop-filter: blur(15px);
+                  background: rgba(255, 255, 255, 0.5); 
+                  // border: 1px solid rgba(255, 255, 255, 0.3);
+                  padding: 18px;
+                  display: flex;
+                  justify-content: space-around;
+                }
+                .twoText{
+                  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                  font-size: 64px;
+                  font-weight: 400;  
+                  color:#FFFFFF  ;
+                  
+                }
+                .twoTitle{
+                  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                         width: 700px;
+                         height: 204px;
+                         font-size: 24px;
+                         font-weight: 500;
+                         line-height: 33,6px;
+                         color: #242424;
+                }
+                @media (max-width: 992px) {
+                 
+                          .twoText{
+                            
+                            font-size: 60px;
+                          }
+                          .twoTitle{
+                            font-size: 20px;
+                          }
+                }
+                @media (max-width: 768px) {
+                  .heroTwo{
+                   display: flex;
+                   flex-direction: column;
+                   align-items: center;
+                  }
+                  .twoText{
+                    font-size: 55px;
+                    
+                  }
+                  .twoTitle{
+                    font-size: 16px;
+                    width: 500px;
+                  }
+                }
+                @media (max-width: 576px) {
+                  .twoText{
+                    font-size: 55px;
+                    
+                  }
+                  .twoTitle{
+                    font-size: 13px;
+                    width: 400px;
+                  }
+                }
+                @media (max-width: 420px) {
+                  .twoText{
+                    font-size: 45px;
+                    
+                  }
+                  .twoTitle{
+                    font-size: 8px;
+                    width: 350px;
+                  }
+                }
+                @media (max-width: 320px) {
+                  .twoText{
+                    font-size: 35px;
+                    
+                  }
+                  .twoTitle{
+                    font-size: 8px;
+                    width: 250px;
+                  }
+                }
+         .icons1{
+                position: absolute;
+                top: 60px;
+                right: -200px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                   
+                }
+                
+                .ins{
+                  margin-bottom: 8px;
+                  width: 35px;
+                  height: 35px;
+                  color: purple;
+         }
+                           .facebook{
+                                    width: 35px;
+                                    height: 35px;
+                                    color: blue; 
+                                    margin-bottom: 8px;
+
+                           }
+                           .vk{
+                                    width: 35px;
+                                    height: 35px;
+                                    color: blue;
+                                    margin-bottom: 8px;
+                           }
+                           .mail{
+                                    width: 35px;
+                                    height: 35px;
+                                    color: white;
+                           }
+                           @media (max-width: 1200px) {
+                                    .pages {
+                                      font-size: 60px;
+                                      width: 80%;
+                                    }
+                                    .homeinput {
+                                      width: 80%;
+                                      font-size: 20px;
+                                    }
+                                    .hometext {
+                                      font-size: 20px;
+                                      width: 80%;
+                                    }
+                                    .icons {
+                                      margin-left: 800px;
+                                    }
+                                    .pageblock{
+                                             display: flex;
+                                             justify-content: center;
+                                             align-items: center;
+                                    }
+                                  }
+                                  
+                                  @media (max-width: 992px) {
+                                    .pages {
+                                      font-size: 50px;
+                                    }
+                                    .hometext {
+                                      font-size: 20px;
+                                      width: 80%;
+                                      margin-left: auto; 
+                                      margin-right: auto;
+                                    }
+                                    .icons1 {
+                                      position: static;
+                                      flex-direction: row;
+                                      justify-content: center;
+                                      margin: 20px auto;
+                                    }
+                                    .homebtn{
+                                             width: 50px;
+                                             height: 51px;
+                                    }
+                                    .pageblock{
+                                            position: relative;
+                                    }
+                                  }
+                                  
+                                  @media (max-width: 768px) {
+                                    .pages {
+                                      font-size: 40px;
+                                      margin-top: 50px;
+                                    }
+                                   
+                                    .homeinput {
+                                      width: 90%;
+                                      font-size: 18px;
+                                      padding-left: 40px;
+                                    }
+                                    .pageblock {
+                                             position: relative;
+                                    }
+                                    .hometext {
+                                      font-size: 17px;
+                                      width: 90%;
+                                      height: 40px;
+                                      margin: 20px auto;
+                                      text-align: center;
+                                    }
+                                    .homebtn{
+                                             position: absolute;
+                                             left:280px;
+                                             width: 48px;
+                                             height: 49px;
+                                    }
+                                    .pageblock{
+                                             display: flex;
+                                             justify-content: center;
+                                             align-items: center;
+                                    }
+                                  }
+                                  
+                                  @media (max-width: 576px) {
+                                    .pages {
+                                      font-size: 30px;
+                                      margin-top: 20px;
+                                    }
+                                    .hometext {
+                                      font-size: 14px;
+                                      width: 95%;
+                                    }
+                                    .icons {
+                                      flex-direction: row;
+                                      gap: 10px;
+                                      justify-content: center;
+                                    }
+                                    .homeinput {
+                                      width: 80%;
+                                    height: 35px;
+                                      padding-left: 45px;
+                                      font-size: 15px;
+                                    }
+                                    .homebtn{
+                                             width: 45px;
+                                             height: 45px;
+                                    }
+                                    .homebtn img{
+                                             width: 15px;
+                                             height: 15px;
+                                    }
+                                    .pageblock{
+                                             display: flex;
+                                             justify-content: center;
+                                             align-items: center;
+                                    }
+                                  }
+                                  @media (max-width:420px) {
+                                    .pages {
+                                      font-size: 25px;
+                                      margin-top: 20px;
+                                    }
+                                    .hometext {
+                                      font-size: 12px;
+                                      width: 90%;
+                                    }
+                                   
+                                    .homeinput {
+                                      width: 75%;
+                                    height: 35px;
+                                      padding-left: 35px;
+                                      font-size: 12px;
+                                    }
+                                    .homebtn{
+                                             position: absolute;
+                                             left: 230px;
+                                             width: 40px;
+                                             height: 40px;
+                                    }
+                                    .pageblock{
+                                            position: relative;
+                                    }
+                                  }
+                                  
+                                  
+                                }
+                                
+
