@@ -6,12 +6,16 @@ import { useSelector } from 'react-redux';
 import { RootState } from '@/redux/store';
 import {useWindowSize} from "react-use" 
 import { useState } from 'react';
+import down from "@/images/down.png"
+
+
 const Header = () => {
     const {width} = useWindowSize()
     const {t, changeLanguage} = UseTranslate()
     const lang = useSelector<RootState, string>((state) => state.language.currentLang)
     const [isShow, setIsShow] = useState<boolean>(false)
-    
+    const [isRegion, setIsRegion] = useState<boolean>(false)
+    const [isRotate, setIsRotate] = useState<boolean>(false)
     return (
         <header id={scss.Header}>
             <div className={`${scss.container} container`}>
@@ -21,23 +25,44 @@ const Header = () => {
 
                         <nav>
                             <Link href="/">{t("Главная","الرئيسية","Home",)}</Link>
-                            <Link href="/regions">{t("регионы","المناطق","regions",)}</Link>
+                            <div onClick={() => setIsRegion(!isRegion)} className={scss.link} >{t("регионы","المناطق","regions",)}
+                                {
+                                isRegion ?
+                                <div className={scss.links}>
+                                    <Link onClick={() => setIsRegion(!isRegion)} href={`/talas`}>{t("","","talas")}</Link>
+                                    <Link onClick={() => setIsRegion(!isRegion)} href={`/naryn`}>{t("","","naryn")}</Link>
+                                    <Link onClick={() => setIsRegion(!isRegion)} href={`/chui`}>{t("","","chui")}</Link>
+                                    <Link onClick={() => setIsRegion(!isRegion)} href={`/osh`}>{t("","","osh")}</Link>
+                                </div>
+                                :
+                                ""
+                                }
+                            </div>
                             <Link href="/culture">{t("культура","الثقافة","culture",)}</Link>
                             <Link href="/gallery">{t("галерея","معرض","gallery",)}</Link>
                             <Link href="/routes">{t("маршруты","الطرق","routes",)}</Link>
                         </nav>
                         <div className={scss.block}>
-                            <select
-                                    onChange={(e) => changeLanguage(e.target.value)}
-                                    name="lang"
-                                    id={scss.Lang}
-                                    value={lang}
-                            >
-                                    <option value="ru" hidden={lang === "ru"}>ru</option>
-                                    <option value="ar" hidden={lang === "ar"}>ar</option>
-                                    <option value="en" hidden={lang === "en"}>en</option>
-                                    <option value="zh" hidden={lang === "zh"}>zh</option>
-                            </select>
+                            <div className="">
+                                <select
+                                        onChange={(e) => changeLanguage(e.target.value)}
+                                        onClick={() => setIsRotate(!isRotate)}
+                                        name="lang"
+                                        id={scss.Lang}
+                                        value={lang}
+                                >
+                                        <option value="ru" hidden={lang === "ru"}>ru</option>
+                                        <option value="ar" hidden={lang === "ar"}>ar</option>
+                                        <option value="en" hidden={lang === "en"}>en</option>
+                                </select>
+                                <img         
+                                    style={{
+                                        transform: isRotate ? 'rotate(180deg)' : 'rotate(0deg)',
+                                        transition: 'transform 0.1s ease-in-out', 
+                                    }} 
+                                    src={down.src} alt="arrow down" 
+                                />
+                            </div>
                             <button>{t("Регистрация","التسجيل","Sign up")}</button>
                         </div>
                     </>

@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.0",
-    "google": "link:@next/font/google",
+    "@next/font": "latest",
     "next": "15.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
