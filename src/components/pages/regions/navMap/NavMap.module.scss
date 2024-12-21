@@ -8,17 +8,6 @@
     .icon {
         width: 100% !important;
         max-width: 200px !important;
-        path {
-            transition: .3s ease;
-            // @media (max-width: 1200px) {
-            //     transform: scale(.9);
-            //     width: auto;
-            // }
-            // @media (max-width: 1034px) {
-            //     transform: scale(.8);
-            //     width: auto;
-            // }
-        }
         &:hover path {
             filter: drop-shadow(2px 3px 1px rgb(49, 7, 237));
         }
