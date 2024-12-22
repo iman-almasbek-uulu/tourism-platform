@@ -7,11 +7,10 @@ const API = process.env.NEXT_PUBLIC_API_URL;
 export const fetchPopularPlaces = createAsyncThunk<PopularPlace[]>(
     "popularPlace/fetchPopularPlaces", async (_, {rejectWithValue}) => {
         try {
-            const response = await axios.get(`${API}/popular`);
+            const response = await axios.get(`${API}/popular_places`);
             return response.data;
         } catch (error: string | any) {
-            return Error(error.message);
-        }
+            return rejectWithValue(error.message || "An error occurred");        }
     }
 );
 

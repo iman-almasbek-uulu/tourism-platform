@@ -60,7 +60,6 @@ const PlacesPopular = () => {
       
       return result;
     }, []);
-    console.log(tabsData);
     
   
     const totalTabs = Object.keys(tabsData).length;

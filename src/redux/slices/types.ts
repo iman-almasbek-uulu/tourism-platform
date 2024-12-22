@@ -19,3 +19,11 @@ export interface RegionData {
     What_to_try: WhatToTryItem[];
     popular_places: PopularPlace[]; 
 }
+
+
+export interface PopularItem {
+    popular_name: string;
+    popular_image: string;
+    description: string;
+    popular_reviews: any[]; // Массив отзывов, если тип отзывов известен, можно заменить any на более точный тип
+}
