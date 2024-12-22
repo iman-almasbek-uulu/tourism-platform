@@ -5,8 +5,12 @@ import imgItem from "@/images/image 956.jpg"
 import imgRight from "@/images/Arrow_alt_lright.png"
 import imgHeart from "@/images/Vector.png"
 import Link from "next/link"
-import { useParams } from "next/navigation"
-import { useMemo, useState } from "react"
+import { useParams, usePathname } from "next/navigation"
+import { useEffect, useMemo, useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { AppDispatch, RootState } from "@/redux/store"
+import { fetchRegions } from "@/redux/slices/regionsSlice"
+import { RegionData } from "@/redux/slices/types"
 
 interface CardType  {
     id: number;
@@ -21,6 +25,20 @@ const PlacesPopular = () => {
     const {region} = useParams()
     const {t} = UseTranslate()
     const [activeTab, setActiveTab] = useState(1);
+    const pathName = usePathname();
+    const dispatch = useDispatch<AppDispatch>();
+    const { regions, error, loading } = useSelector((state: RootState) => state.regions);
+    const routeName = pathName.split("/")[1];
+
+    useEffect(() => {
+        dispatch(fetchRegions());
+    }, [dispatch]);
+
+    const filteredRegion = regions.find((region: RegionData) => 
+        region.region_name.toLowerCase().replaceAll(" ", "") === routeName.toLowerCase().replaceAll(" ", "")
+    );
+
+
 
     const allCards: CardType[] = Array.from({ length: 15 }, (_, i) => ({
         id: i,
@@ -48,50 +66,58 @@ const PlacesPopular = () => {
     const totalTabs = Object.keys(tabsData).length;
 
     return (
-        <section id={scss.Places}>
-            <div className="container">
-                <h2>{t("","","")}</h2>
-                <div className={scss.list}>
-                    {tabsData[activeTab].map((item) => (
-                        <div key={item.id} className={scss.item}>
-                            <img src={imgItem.src} alt="" />
-                            <div className={scss.block}>
-                                <h6>{t("","",item.title)}</h6>
-                                <div>
-                                    <span className={scss.grade}>4.5</span>
-                                    <span className={scss.stars}>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </span>
-                                    <span className={scss.review}>
-                                        23 434 reviews
-                                    </span>
+        <>
+            {loading && <h1>Loading...</h1>}
+            {error && <h1>{error}</h1>}
+            {filteredRegion ? (
+                <section id={scss.Places}>
+                    <div className="container">
+                        <h2>{t("","","")}</h2>
+                        <div className={scss.list}>
+                            {tabsData[activeTab].map((item) => (
+                                <div key={item.id} className={scss.item}>
+                                    <img src={imgItem.src} alt="" />
+                                    <div className={scss.block}>
+                                        <h6>{t("","",item.title)}</h6>
+                                        <div>
+                                            <span className={scss.grade}>4.5</span>
+                                            <span className={scss.stars}>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </span>
+                                            <span className={scss.review}>
+                                                23 434 reviews
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <img className={scss.heart} src={imgHeart.src} alt="" />
+                                    <Link href={`/${region}/balykchy`}>
+                                        <img className={scss.right} src={imgRight.src} alt="" />
+                                    </Link>
+
                                 </div>
-                            </div>
-                            <img className={scss.heart} src={imgHeart.src} alt="" />
-                            <Link href={`/${region}/balykchy`}>
-                                <img className={scss.right} src={imgRight.src} alt="" />
-                            </Link>
-
+                            ))}
                         </div>
-                    ))}
-                </div>
-                <div className={scss.tabs}>
-                    {Array.from({length: totalTabs}, (_,i) => i + 1).map((el,i) => (
-                        <button 
-                        style={{background: activeTab === el ? '#3C5F63' : 'transparent'}}
-                        key={el}
-                        onClick={() => setActiveTab(el)}> {el}</button>
-                    ))
-                    
-                    }
-                </div>
+                        <div className={scss.tabs}>
+                            {Array.from({length: totalTabs}, (_,i) => i + 1).map((el,i) => (
+                                <button 
+                                style={{background: activeTab === el ? '#3C5F63' : 'transparent'}}
+                                key={el}
+                                onClick={() => setActiveTab(el)}> {el}</button>
+                            ))
+                            
+                            }
+                        </div>
 
-            </div>
-        </section>
+                    </div>
+                </section>
+            ) : (
+                ""
+            )}
+        </>
     )
 }
 

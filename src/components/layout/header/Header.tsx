@@ -2,20 +2,67 @@
 import Link from 'next/link';
 import scss from './Header.module.scss';
 import UseTranslate from '@/ui/Translate';
-import { useSelector } from 'react-redux';
-import { RootState } from '@/redux/store';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '@/redux/store';
 import {useWindowSize} from "react-use" 
 import { useState } from 'react';
 import down from "@/images/down.png"
+import path from 'path';
+
 
 
 const Header = () => {
+    const dispatch = useDispatch<AppDispatch>()
+    // const {regions} = useSelector((state:))
     const {width} = useWindowSize()
     const {t, changeLanguage} = UseTranslate()
     const lang = useSelector<RootState, string>((state) => state.language.currentLang)
     const [isShow, setIsShow] = useState<boolean>(false)
     const [isRegion, setIsRegion] = useState<boolean>(false)
     const [isRotate, setIsRotate] = useState<boolean>(false)
+
+    const navItems = [
+        {name: {
+            ru: "Главная",
+            ar: "الرئيسية",
+            en: "Home",
+        },
+        path: "/",
+        },
+        {name: {
+            ru: "регионы",
+            ar: "المناطق",
+            en: "regions",
+        },
+        path: "/regions",
+
+        },
+        {
+            name: {
+                ru: "культура",
+                ar: "الثقافة",
+                en: "culture",
+            },
+            path: "/culture",
+        },
+        {
+            name: { 
+                ru: "галерея",
+                ar: "معرض",
+                en: "gallery",
+            },
+            path: "/gallery",
+        },
+        {
+            name: {
+                ru: "маршруты",
+                ar: "الطرق",
+                en: "routes",
+            },
+            path: "/routes",
+        }, 
+    ] 
+
     return (
         <header id={scss.Header}>
             <div className={`${scss.container} container`}>

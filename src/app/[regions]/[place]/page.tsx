@@ -6,8 +6,8 @@ import PlacesPopular from '@/components/pages/popularPlace/placesPopular/PlacesP
 
 
 const PlacePage = () => {
-    const params = useParams()
-    console.log(params);
+    // const params = useParams()
+    // console.log(params);
     
     
     return <>

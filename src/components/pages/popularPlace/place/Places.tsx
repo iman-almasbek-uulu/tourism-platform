@@ -2,9 +2,20 @@ import UseTranslate from '@/ui/Translate';
 import scss from './Places.module.scss'
 import groupPng from "@/images/Group.png"
 import imgCholpon from "@/images/cholpon.jpg"
+import { AppDispatch, RootState } from '@/redux/store';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchPopularPlaces } from '@/redux/slices/popularPlacesSlice';
 
 const Places = () => {
+    const dispatch = useDispatch<AppDispatch>()
+    const {popularPlaces,error,loading} = useSelector((state: RootState) => state.popularPlaces)
 
+    useEffect(() => {
+        dispatch(fetchPopularPlaces())
+    }, [dispatch])
+
+    
     const {t} = UseTranslate()
 
     return (

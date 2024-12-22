@@ -15,7 +15,7 @@ const RegionPage = () => {
     return (
         <>
             <Region/>
-            <NavMap />
+            {/* <NavMap /> */}
             <Try />
             <Places/>
         </>
