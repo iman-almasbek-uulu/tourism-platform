@@ -67,7 +67,7 @@
   
     .content {
       position: relative;
-      padding: 10px;
+      padding: 17px;
       background: #ffffff;
       width: 420px;
       height: 546px;
@@ -77,10 +77,27 @@
         height: auto;
       }
     }
+    .content h2 {
+      font-size: 24px;
+      font-weight: bold;
+      color: #004A60;
+      margin: 0;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+    
+    .content p {
+      font-size: 16px;
+      color:#242424;
+      line-height: 1.5;
+      margin: 0;
+      font-weight: 400;
+    }
+    
   
     .butt {
       position: absolute;
-      left: 50%;
+      left: 75%;
       bottom: 20px;
       transform: translateX(-50%);
       width: 143px;
@@ -105,9 +122,9 @@
       }
   
       .arrow_right {
-        color: white;
         width: 20px;
         margin-left: 10px;
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(360deg) brightness(100%) contrast(100%);
       }
   
       @media (max-width: 768px) {

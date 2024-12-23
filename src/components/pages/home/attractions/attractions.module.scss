@@ -16,6 +16,14 @@
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 10px 20px rgba(255, 255, 255, 0.6);
     }
   }
+  .cardimg {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 300px;
+    top: 415px;
+    color: #33363f;
+  }
 
   .title {
     font-size: 64px;
@@ -28,7 +36,7 @@
     padding: 5px;
   }
 
-  .cardImg {
+  .cardImgs {
     position: relative;
   }
 
@@ -53,6 +61,10 @@
       width: 20px;
     }
   }
+  .cardDescription{
+    font-size: 14px;
+    color: #242424;
+  }
 
   .cardsContainer {
     display: grid;
@@ -61,7 +73,7 @@
     justify-content: center;
     margin: 0 auto;
     max-width: 1080px;
-    padding: 20px;
+    padding: 30px;
   }
 
   @media (max-width: 1024px) {
@@ -82,13 +94,45 @@
     .imageS {
       width: 300px;
       height: 240px;
-      left: 280px;
+      left: -80px;
     top: 20px; 
     }
 
     .imglike {
       left: 250px;
-      top: -240px;
+    }
+  }
+  @media (max-width: 992px) {
+    .cardsContainer {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .title {
+      font-size: 48px; 
+    }
+
+    .card {
+      position: relative;
+      width: 300px; 
+      height: 420px;
+    }
+
+    .imageS {
+      width: 300px;
+      height: 240px;
+      left: -80px;
+    }
+    .cardimg{
+      position: absolute;
+      left: 250px;
+      top: 400px;
+    }
+
+    .imglike {
+      left: 250px;
+    }
+      top: 100px;
     }
   }
 
@@ -104,20 +148,22 @@
     }
 
     .card {
-      width: 100%;
+      width: 280px;
       height: auto; 
     }
 
     .imageS {
       width: 100%; 
       height: auto;
+      position: static;
+      top: -10px;
     }
 
     .imglike {
       left: calc(100% - 60px); 
       top: -50px; 
     }
-  }
+ 
 
   .cardTitle {
     font-size: 14px;
@@ -132,12 +178,162 @@
     line-height: 13px;
   }
 
+ 
+}
+@media (max-width: 480px) {
+  .cardsContainer {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .title {
+    font-size: 28px; /* Уменьшение размера шрифта */
+    text-align: center;
+    margin-bottom: 10px; /* Добавление отступа */
+  }
+
+  .card {
+    width: 250px;
+    padding: 10px; /* Увеличение внутреннего отступа */
+    height: auto;
+  }
+
+  .imageS {
+    width: 100%;
+    height: auto;
+    position: static;
+    margin-top: 10px; /* Добавление пространства сверху */
+  }
+
+  .imglike {
+    left: calc(100% - 50px); /* Подстройка положения */
+    top: -40px;
+  }
+
+  .cardTitle {
+    font-size: 12px; /* Уменьшение размера текста */
+    line-height: 15px;
+    color: #242424;
+  }
+
+  .cardDescription {
+    font-size: 10px; /* Уменьшение текста для описания */
+    color: #242424;
+    font-weight: 400;
+    line-height: 12px;
+  }
+
   .cardimg {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    left: 300px;
-    top: 415px;
+    width: 15px; /* Уменьшение размера изображения */
+    height: 15px;
+    left: 200px; /* Корректировка положения */
+    top: 350px;
     color: #33363f;
   }
 }
+@media (max-width: 570px) {
+  .cardsContainer {
+    grid-template-columns: 1fr; /* Одно изображение в ряд */
+    gap: 10px; /* Уменьшенное расстояние */
+  }
+
+  .title {
+    font-size: 24px; /* Меньший шрифт */
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .card {
+    width: 100%;
+    padding: 8px;
+    height: auto;
+  }
+
+  .imageS {
+    width: 100%;
+    height: auto;
+    position: static;
+    margin-top: 8px;
+  }
+
+  .imglike {
+    left: calc(100% - 40px); /* Положение кнопки */
+    top: -30px;
+  }
+
+  .cardTitle {
+    font-size: 10px; /* Уменьшенный текст */
+    line-height: 14px;
+    color: #242424;
+  }
+
+  .cardDescription {
+    font-size: 8px; /* Очень мелкий текст */
+    color: #242424;
+    font-weight: 400;
+    line-height: 10px;
+  }
+
+  .cardimg {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 150px; /* Положение под экран */
+    top: 300px;
+    color: #33363f;
+  }
+}
+@media (max-width: 320px) {
+  .cardsContainer {
+    grid-template-columns: 1fr; /* Одна колонка */
+    gap: 5px; /* Очень маленькое расстояние */
+  }
+
+  .title {
+    font-size: 18px; /* Минимальный размер текста */
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  .card {
+    width: 100%;
+    padding: 5px;
+    height: auto;
+  }
+
+  .imageS {
+    width: 100%;
+    height: auto;
+    position: static;
+    margin-top: 5px;
+  }
+
+  .imglike {
+    left: calc(100% - 30px); /* Положение кнопки */
+    top: -20px;
+  }
+
+  .cardTitle {
+    font-size: 8px; /* Минимальный размер */
+    line-height: 10px;
+    color: #242424;
+  }
+
+  .cardDescription {
+    font-size: 6px; /* Очень маленький текст */
+    color: #242424;
+    font-weight: 400;
+    line-height: 8px;
+  }
+
+  .cardimg {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    left: 120px; /* Настройка для компактности */
+    top: 250px;
+    color: #33363f;
+  }
+}
+

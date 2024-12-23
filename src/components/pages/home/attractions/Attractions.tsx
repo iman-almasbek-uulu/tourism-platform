@@ -68,9 +68,10 @@ export const Card: React.FC<CardProps> = ({ title, description, imageUrl,toimag 
     <div>
      <div className="container">
     <div className={scss.card}>
-<div className={scss.cardImg}>
+<div className={scss.cardImgs}>
 <img className={scss.imageS} src={imageUrl} alt={title} />
 <div className={scss.imglike}><img className={scss.like} src="/images/like.svg" alt="" /></div>
+
   </div>     
   <div className={scss.textblock}> 
       <h2 className={scss.cardTitle}>{title}</h2>

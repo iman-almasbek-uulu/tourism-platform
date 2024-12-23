@@ -120,70 +120,17 @@
                          line-height: 33,6px;
                          color: #242424;
                 }
-                @media (max-width: 992px) {
-                 
-                          .twoText{
-                            
-                            font-size: 60px;
-                          }
-                          .twoTitle{
-                            font-size: 20px;
-                          }
-                }
-                @media (max-width: 768px) {
-                  .heroTwo{
-                   display: flex;
-                   flex-direction: column;
-                   align-items: center;
+                .icons1{
+                  position: absolute;
+                  padding: 20px;
+                  top: 60px;
+                  right: -200px;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                     
                   }
-                  .twoText{
-                    font-size: 55px;
-                    
-                  }
-                  .twoTitle{
-                    font-size: 16px;
-                    width: 500px;
-                  }
-                }
-                @media (max-width: 576px) {
-                  .twoText{
-                    font-size: 55px;
-                    
-                  }
-                  .twoTitle{
-                    font-size: 13px;
-                    width: 400px;
-                  }
-                }
-                @media (max-width: 420px) {
-                  .twoText{
-                    font-size: 45px;
-                    
-                  }
-                  .twoTitle{
-                    font-size: 8px;
-                    width: 350px;
-                  }
-                }
-                @media (max-width: 320px) {
-                  .twoText{
-                    font-size: 35px;
-                    
-                  }
-                  .twoTitle{
-                    font-size: 8px;
-                    width: 250px;
-                  }
-                }
-         .icons1{
-                position: absolute;
-                top: 60px;
-                right: -200px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                   
-                }
+
                 
                 .ins{
                   margin-bottom: 8px;
@@ -209,6 +156,13 @@
                                     height: 35px;
                                     color: white;
                            }
+                           @media (max-width:1300px) {
+                            .icons1 {
+                              right: -60px;
+                               
+                             }
+                            
+                           }
                            @media (max-width: 1200px) {
                                     .pages {
                                       font-size: 60px;
@@ -230,24 +184,34 @@
                                              justify-content: center;
                                              align-items: center;
                                     }
+                                    .icons1 {
+                                     right:  10px;
+                                      
+                                    }
+                                   
                                   }
                                   
                                   @media (max-width: 992px) {
+                                    
+                                    .twoText{
+                            
+                                      font-size: 60px;
+                                    }
+                                    .twoTitle{
+                                      font-size: 20px;
+                                    }
+                                    
                                     .pages {
                                       font-size: 50px;
-                                    }
+                                  
+
                                     .hometext {
                                       font-size: 20px;
                                       width: 80%;
                                       margin-left: auto; 
                                       margin-right: auto;
                                     }
-                                    .icons1 {
-                                      position: static;
-                                      flex-direction: row;
-                                      justify-content: center;
-                                      margin: 20px auto;
-                                    }
+                                  
                                     .homebtn{
                                              width: 50px;
                                              height: 51px;
@@ -255,6 +219,14 @@
                                     .pageblock{
                                             position: relative;
                                     }
+                                    .icons1 {
+                                      position: static;
+                                      flex-direction: row;
+                                      justify-content: center;
+                                      
+                                    }
+                                  }
+
                                   }
                                   
                                   @media (max-width: 768px) {
@@ -262,6 +234,19 @@
                                       font-size: 40px;
                                       margin-top: 50px;
                                     }
+                                    .heroTwo{
+                                      display: flex;
+                                      flex-direction: column;
+                                      align-items: center;
+                                     }
+                                     .twoText{
+                                       font-size: 55px;
+                                       
+                                     }
+                                     .twoTitle{
+                                       font-size: 16px;
+                                       width: 500px;
+                                     }
                                    
                                     .homeinput {
                                       width: 90%;
@@ -324,6 +309,14 @@
                                              justify-content: center;
                                              align-items: center;
                                     }
+                                    .twoText{
+                                      font-size: 55px;
+                                      
+                                    }
+                                    .twoTitle{
+                                      font-size: 13px;
+                                      width: 400px;
+                                    }
                                   }
                                   @media (max-width:420px) {
                                     .pages {
@@ -333,6 +326,14 @@
                                     .hometext {
                                       font-size: 12px;
                                       width: 90%;
+                                    }
+                                    .twoText{
+                                      font-size: 45px;
+                                      
+                                    }
+                                    .twoTitle{
+                                      font-size: 8px;
+                                      width: 350px;
                                     }
                                    
                                     .homeinput {
@@ -351,8 +352,20 @@
                                             position: relative;
                                     }
                                   }
+                                   
+                @media (max-width: 320px) {
+                  .twoText{
+                    font-size: 35px;
+                    
+                  }
+                  .twoTitle{
+                    font-size: 8px;
+                    width: 250px;
+                  }
+                }
+        
                                   
                                   
-                                }
+                              }
                                 
 
