@@ -74,6 +74,7 @@ const Culture: React.FC = () => {
           <div className={styles.content}>
             <h2>{currentSlide.title}</h2>
             <p>{currentSlide.description}</p>
+            
             <button className={styles.butt}>
               More <img className={styles.arrow_right} src="/images/arrow.svg" alt="" />
               
