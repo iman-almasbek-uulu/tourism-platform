@@ -1,13 +1,14 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { PopularPlace } from "./types";
+import { getApiUrl } from "@/ui/getApi";
 
 const API = process.env.NEXT_PUBLIC_API_URL;
 
 export const fetchPopularPlaces = createAsyncThunk<PopularPlace[]>(
     "popularPlace/fetchPopularPlaces", async (_, {rejectWithValue}) => {
         try {
-            const response = await axios.get(`${API}/popular_places`);
+            const response = await axios.get(`${getApiUrl()}/popular_places`);
             return response.data;
         } catch (error: string | any) {
             return rejectWithValue(error.message || "An error occurred");        }

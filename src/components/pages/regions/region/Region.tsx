@@ -20,7 +20,7 @@ const Region = () => {
     useEffect(() => {
         dispatch(fetchRegions());
     }, [dispatch]);
-
+    
     const filteredRegion = regions.find((region: RegionData) => 
         region.region_name.toLowerCase().replaceAll(" ", "") === routeName.toLowerCase().replaceAll(" ", "")
     );
