@@ -1,0 +1,160 @@
+#CultureName{
+         margin-top: 15px;
+         width: 100%;
+         max-width: 1200px;
+         height: 747px;
+   background-position: 0%;
+   background-size: cover;
+   background-repeat: no-repeat;
+   margin: 0 auto;
+         background-image: url('https://s3-alpha-sig.figma.com/img/369f/9bdb/c92139ca12281b149aabc78993b186d2?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=lhKlnGxvTSOO0v9TwRHRTIjspUx~pvTaQoqrh49X5mbjBpjaQjJNAkjVJDd5A9Zgce9VxtD0G1JG2J~AlSAjWTz2ogDrFen7nr1pT4gVS9WeOHhJfNKVn8eRVbBBGWw-kPrSdvarl5Qnu7Xsl5Jtz4IzoGeGFVMZSwY98fQIWIyt-mpgRXhUM-MpqK9-qfyMBVexnNvjbbTqvz9JV9bo9psD6ltsv8hYD29o6TxzOIHDDC1Y-87hAOnvLTl9KCb6XT7eSeTmgNR-WkLP0PdnmgnMz2R64jK3O1LDP8ph9sFBOnn-MkFVLCQFT0MDFrcAhDdt6N7WjPt12KOQK9L5~g__');
+         display: flex;
+         justify-content: center;
+         align-items: center;
+        .Pages{
+         width: 100%;
+         max-width: 395px;
+         height: 527px;
+         border-radius: 5px;
+         background: #FFFFFF;
+         padding:0 25px;
+        }
+         .title {
+                  font-size: 64px;
+                  font-weight: 400;
+                  text-align: center;
+                  color: #004A60;
+
+                }
+              
+                .text {
+                  width: 100%;
+                  max-width: 330px;
+                  height: 260px;
+                  font-size: 14px;
+                  line-height: 1.6;
+                  color: #333; 
+                  text-align: center; 
+                }
+              
+                .menuBlock {
+                  display: flex;
+                  justify-content: center; 
+                }
+              
+                .menu {
+                  list-style: none; 
+                  padding: 0;
+                  margin: 0;
+                  display: flex;
+                  flex-direction: column; 
+                }
+                  .item {
+                    display: flex;
+                    align-items: center; 
+                    justify-content: space-between; 
+                    background-color: #f9f9f9;
+                    width: 330px; 
+              
+                    &:hover {
+                      background-color: #eaeaea; 
+                    }}
+              
+                    a {
+                      text-decoration: none; 
+                      color: #004A60; 
+                      font-size: 14px;
+                      font-weight: 500;
+                      flex: 1; 
+                    }
+              
+                    .arrow {
+                           color: #004A60;
+                      width: 20px; 
+                      height: 20px; 
+                    }
+
+                    @media (max-width: 768px) {
+                           #CultureName{
+                                    width: auto;
+                                    height: auto;
+                           }
+                           .Pages {
+                             width: 100%; 
+                             max-width: 295px; 
+                             height: auto; 
+                             margin: 0 auto; 
+                           }
+                         
+                           .title {
+                             text-align: center;
+                             font-size: 36px; 
+                             margin-bottom: 20px; 
+                           }
+                         
+                           .text {
+                             font-size: 12px; 
+                             width: 100%; 
+                             max-width: 300px;
+                             height: auto;
+                             max-height: none; 
+                             line-height: 1.5; 
+                             margin: 0 auto; 
+                           }
+                         
+                           .item {
+                             width: 100%; 
+                             max-width: 300px; 
+                             margin-bottom: 10px; 
+                             display: flex; 
+                             justify-content: space-between;
+                             align-items: center; 
+                           }
+                         
+                           .arrow {
+                             max-width: 20px; 
+                             height: auto;
+                           }
+                         }
+                         @media (max-width: 420px) {
+                           .Pages {
+                             width: 100%; 
+                             max-width: 270px; 
+                             height: auto; 
+                             margin: 0 auto; 
+                             padding: 10px; 
+                           }
+                         
+                           .title {
+                             text-align: center;
+                             font-size: 28px; 
+                             margin-bottom: 15px;
+                           }
+                         
+                           .text {
+                             font-size: 10px;
+                             width: 100%; 
+                             max-width: 270px;
+                             height: auto; 
+                             max-height: none; 
+                             line-height: 1.4; 
+                             margin: 0 auto; 
+                           }
+                         
+                           .item {
+                             width: 100%; 
+                             max-width: 270px;
+                             margin-bottom: 8px; 
+                             display: flex; 
+                             justify-content: space-between;
+                             align-items: center; 
+                           }
+                         
+                           .arrow{
+                             max-width: 18px; 
+                             height: auto;
+                           }
+                         }
+                                                  
+        
+}

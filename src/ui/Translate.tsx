@@ -21,6 +21,7 @@ const UseTranslate = () => {
     }
     const changeLanguage = (lang: string) => {
         dispatch(setLanguage(lang))
+        localStorage.setItem("lang",lang)
     }
 
     return {t, changeLanguage}

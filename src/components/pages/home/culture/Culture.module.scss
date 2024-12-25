@@ -1,7 +1,8 @@
 #Sliders {
     width: 100%;
+    max-width: 100%;
     margin: 0 auto;
-    height: 794px;
+    height: auto;
     position: relative;
     margin-top: 100px;
     display: flex;
@@ -24,28 +25,29 @@
   
     .slider {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 1200px;
-      height: 546px;
-  
-      @media (max-width: 1200px) {
-        width: 100%;
-        padding: 10px;
-      }
-  
-      @media (max-width: 768px) {
-        flex-direction: column;
-        height: auto;
-      }
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 546px;
+  max-width: 100%; /* Ограничивает ширину слайдера */
+  overflow: hidden;
+  margin: 0 auto;
+  @media (max-width: 992px) {
+   flex-wrap: wrap;
+   width: auto;
+   height: auto;
+   margin: 0 auto;
+  }
+     
+     
     }
   
     .slide {
-      padding: 30px;
-  
-      @media (max-width: 768px) {
-        padding: 15px;
-      }
+
+      flex: 2 1 60%; 
+      text-align: center;
+      margin: 20px;
+     
     }
   
     .image {
@@ -54,10 +56,15 @@
       object-fit: cover;
       border-bottom: 1px solid #ccc;
       margin: 15px;
+      max-width: 100%;
+    
   
       @media (max-width: 1200px) {
-        width: 100%;
-        height: auto;
+        width: auto;
+        height: 540px;
+      }
+      @media (max-width: 992px) {
+        text-align: center;
       }
   
       @media (max-width: 768px) {
@@ -68,13 +75,48 @@
     .content {
       position: relative;
       padding: 17px;
+
+      padding: 20px;
       background: #ffffff;
       width: 420px;
       height: 546px;
+      margin: 10px;
+
+
+      flex: 1 1 40%; 
+      @media (max-width: 992px) {
+
+        text-align: center;
+      }
+
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #004A60;
+      line-height: 32px;
+    }
+
+    p {
+      color: #242424;
+      font-weight: 400;
+line-height: 20px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
   
       @media (max-width: 1200px) {
-        width: 100%;
-        height: auto;
+        width: 410px;
+        height: 540px;
+        font-size: 14px;
+       
+      }
+      
+      @media (max-width: 992px) {
+        width: 400px;
+        height: 540px;
+        font-size: 12px;
+       
       }
     }
     .content h2 {
@@ -97,7 +139,8 @@
   
     .butt {
       position: absolute;
-      left: 75%;
+      left: 75;
+      left: 70%;
       bottom: 20px;
       transform: translateX(-50%);
       width: 143px;
@@ -110,11 +153,29 @@
       color: white;
       border: none;
       cursor: pointer;
+      @media (max-width: 1300px) {
+       
+        left: 78%;
+        bottom:20px
+      }  
+      @media (max-width: 1200px) {
+       
+        left: 73%;
+        bottom:20px;
+        width: 137px;
+        height: 40px;
+      } 
+      @media (max-width: 992px) {
+        width: 127px;
+        height: 35px;
+      } 
+
+
       @media (max-width: 768px) {
         width: 103px;
         height: 32px;
         position: absolute;
-        left: 80%;
+        left: 75%;
         bottom:20px
       }  
       .butTitle {
@@ -122,6 +183,8 @@
       }
   
       .arrow_right {
+
+        filter: invert(1);
         width: 20px;
         margin-left: 10px;
         filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(360deg) brightness(100%) contrast(100%);

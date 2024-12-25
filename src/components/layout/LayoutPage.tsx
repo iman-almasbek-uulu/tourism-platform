@@ -17,6 +17,7 @@ const LayoutPage: FC<LayoutPageProps> = ({ children }) => {
       <div className={scss.LayoutPage}>
         <Header />
         <main>{children}</main>
+        
         <Footer />
       </div>
     </Provider>

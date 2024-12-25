@@ -18,6 +18,7 @@ const Places = () => {
     const pathName = usePathname();
     const routeName = pathName.split("/")[2];
 
+    
     useEffect(() => {
         dispatch(fetchPopularPlaces());
     }, [dispatch]);
