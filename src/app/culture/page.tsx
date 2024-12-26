@@ -1,11 +1,8 @@
-import React from 'react';
+import React from "react";
+import MainCulture from "@/components/pages/culture/MainCulture";
 
 const CulturePage = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  return <MainCulture />;
 };
 
 export default CulturePage;
