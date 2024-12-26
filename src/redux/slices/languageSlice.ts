@@ -5,8 +5,9 @@ interface InitialType {
 }
 
 
+
 const initialState: InitialType = {
-    currentLang: "en"
+    currentLang: localStorage.getItem("lang") || "en"
 }
 
 

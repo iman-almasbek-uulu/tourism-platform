@@ -3,12 +3,18 @@ import languageReducer from "./slices/languageSlice"
 import regionsReducer from "./slices/regionsSlice"
 import popularPlacesReducer from "./slices/popularPlacesSlice"
 import popularPlacesItemReducer from "./slices/popularPlaceItemSlice"
+import hotelItemReducer from "./slices/popularPlacesSlices/hotelItemSlice"
+import hotelReducer from "./slices/popularPlacesSlices/hotelsSlice"
+import galleryReducer from "./slices/gallerySlices/gallerySlice"
 export const store = configureStore({
     reducer: {
         language: languageReducer,
         regions: regionsReducer,
         popularPlaces: popularPlacesReducer,
-        popularPlaceItem: popularPlacesItemReducer
+        popularPlaceItem: popularPlacesItemReducer,
+        hotels: hotelReducer,
+        hotelItem: hotelItemReducer,
+        gallery: galleryReducer
     }
 })
 

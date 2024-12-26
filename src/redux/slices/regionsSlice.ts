@@ -1,17 +1,19 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import {WhatToTryItem,PopularPlace,RegionData} from "./types";
+import {RegionData} from "./types";
+import { getApiUrl } from "@/ui/getApi";
 
 
-const API = process.env.NEXT_PUBLIC_API_URL;
 
 export const fetchRegions = createAsyncThunk<RegionData[]>(
     "regions/fetchRegions", async (_,{rejectWithValue}) => {
         try {
-            const response = await axios.get(`${API}/region`);
+            const response = await axios.get(`${getApiUrl()}/region`);
             return response.data;
+            console.log(response.data);
+            
         } catch (error: string | any) {
-            return Error(error.message);
+            return rejectWithValue(error.message);
         }
     }
 )

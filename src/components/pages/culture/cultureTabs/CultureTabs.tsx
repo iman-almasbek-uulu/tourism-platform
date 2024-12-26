@@ -32,6 +32,7 @@ const CultureTabs = ({
         </div>
       </div>
     </section>
+
   );
 };
 

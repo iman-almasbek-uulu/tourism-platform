@@ -43,21 +43,22 @@ const Try = () => {
                     <h2>{t("","",`What to try in ${filteredRegion.region_name}?`)}</h2>
                     <div className={scss.content}>
                             <div className={scss.item}>
-                                <h4>{formatString(t(
+                                <h4>{t(
                                     '',
                                     '',
-                                    filteredRegion.What_to_try[currentContent].to_name))}</h4>
+                                    filteredRegion?.What_to_try[currentContent]?.to_name
+                                )}</h4>
                                 <p>{t(
                                     '',
                                     '',
-                                    filteredRegion.What_to_try[currentContent].first_description,
+                                    filteredRegion?.What_to_try[currentContent]?.first_description,
                                 )}</p>
                             </div>
                             <div className={scss.imgs}>
-                                    <img src={filteredRegion.What_to_try[currentContent].image} alt="" />
+                                    <img src={filteredRegion?.What_to_try[currentContent]?.image} alt="" />
                                 <div>
                                     <div className={scss.bg}>
-                                        <img src={filteredRegion.What_to_try[currentContent].image} alt="" />
+                                        <img src={filteredRegion?.What_to_try[currentContent]?.image} alt="" />
                                     </div>
                                     {filteredRegion.What_to_try.map((el,i) => (
                                         i !== currentContent ?  (
@@ -79,7 +80,7 @@ const Try = () => {
                                     {t(
                                         '',
                                         '',
-                                        filteredRegion.What_to_try[currentContent].second_description,
+                                        filteredRegion?.What_to_try[currentContent]?.second_description,
                                     )}    
                                 </p>
                             </div>
