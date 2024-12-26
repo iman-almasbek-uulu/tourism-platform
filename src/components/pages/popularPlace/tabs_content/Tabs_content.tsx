@@ -68,7 +68,7 @@ const Tabs_content = () => {
                     {isTab === 3 && <Tab_event />}
                     {isTab === 4 && <Tab_attractions />}
                 </div>
-                <Reviews />
+                {/* <Reviews /> */}
             </div>
         </section>
     )

@@ -22,9 +22,10 @@ const Region = () => {
     }, [dispatch]);
     
     const filteredRegion = regions.find((region: RegionData) => 
-        region.region_name.toLowerCase().replaceAll(" ", "") === routeName.toLowerCase().replaceAll(" ", "")
+        region.region_category.toLowerCase().replaceAll(" ", "") === routeName.toLowerCase().replaceAll(" ", "")
     );
 
+    
 
     return (
         <>
@@ -43,12 +44,10 @@ const Region = () => {
                                 </div>
                             </div>
                             <div className={scss.block}>    
-                                        <h2>{t("", "", filteredRegion.region_name)}</h2>
-                                        <p>{t(
-                                            ``,
-                                            ``,
+                                        <h2>{filteredRegion.region_name}</h2>
+                                        <p>{
                                             filteredRegion.region_description.slice(0, 470) + "..."
-                                        )}</p>
+                                        }</p>
                             </div>
                         </div>
                     </div>

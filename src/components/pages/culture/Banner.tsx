@@ -4,8 +4,10 @@ import scss from "./Culture.module.scss";
 import React from 'react';
 const CulturePage = () => {
     return (
-        <section></section>
+        <section>
+
+        </section>
       );
 };
 
-export default CulturePage;
+export default CulturePage; 

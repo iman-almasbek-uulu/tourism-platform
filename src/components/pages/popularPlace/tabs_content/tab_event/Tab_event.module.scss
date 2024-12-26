@@ -1,0 +1,45 @@
+.event {
+    width: 100%;
+
+    .list {
+        display: grid;
+        grid-template-columns: 24% 24% 24% 24%;
+        gap: 4%;
+
+        .item {
+            .img {
+                width: 100%;
+                height: 153px;
+                position: relative;
+                >img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 8px;
+                }
+                .eventTabs {
+                    position: absolute;
+                    display: flex;
+                    gap: 10px;
+                    bottom: 5px;
+                    left: 5px;
+                    div {
+                        padding: 5px ;
+                        background: #0000007A;
+                        display: flex;
+                        gap: 3px 5px;
+                        align-items: center;
+                        color: white;
+                        border-radius: 5px;
+                        img {
+                            width: 17px;
+                            height: 17px;
+                        }
+                    }
+                }
+
+            }   
+            
+        }
+    }
+}
