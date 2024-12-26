@@ -10,15 +10,10 @@ import { useEffect, useMemo, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { AppDispatch, RootState } from "@/redux/store"
 import { fetchRegions } from "@/redux/slices/regionsSlice"
-import { RegionData } from "@/redux/slices/types"
+import { PopularPlace, RegionData } from "@/redux/slices/types"
 
-interface CardType  {
-    id: number;
-    title: string;
-    rating: number;
-    reviews: number
-}
-type TabsDataType = Record<number, CardType[]>;
+
+type TabsDataType = Record<number, PopularPlace[]>;
 
 
 const PlacesPopular = () => {
@@ -35,31 +30,32 @@ const PlacesPopular = () => {
     }, [dispatch]);
 
     const filteredRegion = regions.find((region: RegionData) => 
-        region.region_name.toLowerCase().replaceAll(" ", "") === routeName.toLowerCase().replaceAll(" ", "")
+        region.region_category.toLowerCase().replaceAll(" ", "") === routeName.toLowerCase().replaceAll(" ", "")
     );
+    
 
 
 
-    const allCards: CardType[] = Array.from({ length: 15 }, (_, i) => ({
-        id: i,
-        title: 'Balykchy '+i,
-        rating: 4.5,
-        reviews: 23434,
-    }));
+
 
     const CARDS_PER_TAB = 3;
     const tabsData: TabsDataType = useMemo(() => {
-
-      const result: TabsDataType = {};
-      const totalTabs = Math.ceil(allCards.length / CARDS_PER_TAB);
-      
-      for (let i = 0; i < totalTabs; i++) {
-        const startIndex = i * CARDS_PER_TAB;
-        result[i + 1] = allCards.slice(startIndex, startIndex + CARDS_PER_TAB);
-      }
-      
-      return result;
-    }, []);
+        if (!filteredRegion || !filteredRegion.popular_places) {
+            // Если данные отсутствуют, возвращаем пустой объект
+            return {};
+        }
+    
+        const result: TabsDataType = {};
+        const totalTabs = Math.ceil(filteredRegion.popular_places.length / CARDS_PER_TAB);
+    
+        for (let i = 0; i < totalTabs; i++) {
+            const startIndex = i * CARDS_PER_TAB;
+            result[i + 1] = filteredRegion.popular_places.slice(startIndex, startIndex + CARDS_PER_TAB);
+        }
+    
+        return result;
+    }, [filteredRegion]);
+    
     
   
     const totalTabs = Object.keys(tabsData).length;
@@ -73,13 +69,13 @@ const PlacesPopular = () => {
                     <div className="container">
                         <h2>{t("","","")}</h2>
                         <div className={scss.list}>
-                            {tabsData[activeTab].map((item) => (
-                                <div key={item.id} className={scss.item}>
-                                    <img src={imgItem.src} alt="" />
+                            {tabsData[activeTab].map((item,i) => (
+                                <div key={i} className={scss.item}>
+                                    <img src={item.popular_image} alt="" />
                                     <div className={scss.block}>
-                                        <h6>{t("","",item.title)}</h6>
+                                        <h6>{t("","",item.popular_name)}</h6>
                                         <div>
-                                            <span className={scss.grade}>4.5</span>
+                                            <span className={scss.grade}>{item.avg_rating}</span>
                                             <span className={scss.stars}>
                                                 <span></span>
                                                 <span></span>
@@ -88,12 +84,12 @@ const PlacesPopular = () => {
                                                 <span></span>
                                             </span>
                                             <span className={scss.review}>
-                                                23 434 reviews
+                                                {item.rating_count} reviews
                                             </span>
                                         </div>
                                     </div>
                                     <img className={scss.heart} src={imgHeart.src} alt="" />
-                                    <Link href={`/${region}/balykchy`}>
+                                    <Link href={`/${routeName}/${item.popular_name}`}>
                                         <img className={scss.right} src={imgRight.src} alt="" />
                                     </Link>
 

@@ -27,7 +27,7 @@ const initialState: initialStateType = {
     error: ""
 }
 
-const hotelsSlice = createSlice({
+const kitchensSlice = createSlice({
     name: "hotels",
     initialState,
     reducers: {},
@@ -46,4 +46,4 @@ const hotelsSlice = createSlice({
     }
 })
 
-export default hotelsSlice.reducer;
+export default kitchensSlice.reducer;

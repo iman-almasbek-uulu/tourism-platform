@@ -13,11 +13,14 @@ export interface PopularPlace {
 }
 
 export interface RegionData {
+    id: number,
     region_name: string; 
     region_image: string; 
     region_description: string; 
     What_to_try: WhatToTryItem[];
     popular_places: PopularPlace[]; 
+    region_category: string
+
 }
 
 

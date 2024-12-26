@@ -1,4 +1,5 @@
 export interface HotelType {
+    id: number,
     name: string;
     hotel_image: string[]; 
     average_rating: number; 
@@ -6,16 +7,19 @@ export interface HotelType {
 }
 
 export interface HotelItemType {
-    name: string; // Название отеля
-    hotel_image: string[]; // Массив изображений
-    address: string; // Адрес отеля
-    bedroom: number; // Количество спален
-    bathroom: number; // Количество ванных комнат
-    cars_bikes: string; // Информация об авто или велосипедах
-    pets: number; // Информация о животных (возможно, количество)
-    amenities: string; // Удобства
-    safety_hygiene: string; // Безопасность и гигиена
-    price_short_period: number; // Цена за короткий период
-    price_medium_period: number; // Цена за средний период
-    price_long_period: number; // Цена за длительный период
-}
+    id: number;
+    name: string;
+    hotel_image: string[]; // Массив строк для изображений отеля
+    address: string;
+    bedroom: number;
+    bathroom: number;
+    cars: number;
+    bikes: number;
+    pets: number;
+    amenities: string[]; // Массив строк для удобств
+    safety_and_hygiene: string;
+    price_short_period: number; // Цена за короткий срок аренды
+    price_medium_period: number; // Цена за средний срок аренды
+    price_long_period: number; // Цена за длительный срок аренды
+  }
+  
