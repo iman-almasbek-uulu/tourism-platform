@@ -1,20 +1,24 @@
 import UseTranslate from '@/ui/Translate';
 import scss from './Cafes.module.scss';
-import imgHotel from "@/images/hotel.jpg" 
-import { useState } from 'react';
-
-const Cafes = () => {
-
+import { FC, useState } from 'react';
+import { Cafe } from '@/redux/slices/popularPlacesSlices/types';
+interface propsType {
+    kitchens: Cafe[];
+    loading: boolean;
+    error: string | any;
+    isCurrent: number;
+    setIsCurrent: (id:number) => void
+}
+const Cafes: FC<propsType> = ({kitchens,loading,error,setIsCurrent}) => {
     const {t} = UseTranslate()
-
-    const lengths = 10
     const [isLimit, setIsLimit] = useState<number>(1)
 
-    const data = Array.from({length:lengths}, (_,i) => (
-        <div key={i} className={scss.item}>
-            <img src={imgHotel.src} alt="" />
+
+    const data = kitchens.map((el,i) => (
+        <div onClick={() => setIsCurrent(el.id)} key={i} className={scss.item}>
+            <img src={el.main_image} alt="" />
             <div className={scss.info}>
-                <h6 className={scss.title}>{t("","","Ethno-cafe Dastorkon")}</h6>
+                <h6 className={scss.title}>{el.kitchen_name}</h6>
                 <div className={scss.stars_review}>
                     <div className={scss.stars}>
                         <span></span>
@@ -23,14 +27,12 @@ const Cafes = () => {
                         <span></span>
                         <span></span>
                     </div>
-                    <p>{t("","","Reviews: 13")}</p>
+                    <p>Reviews: {el.rating_count}</p>
                 </div>
                 <div className={scss.prices}>
-                    {t(
-                        "",
-                        "",
-                        "$$ - $$$, Russian, Canadian"
-                    )}
+                    {
+                        `$${el.price} - $${el.price}, ${el.type_of_cafe.map(item => item+", ")}`
+                    }
                 </div>
             </div>
 

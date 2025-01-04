@@ -89,7 +89,7 @@ const PlacesPopular = () => {
                                         </div>
                                     </div>
                                     <img className={scss.heart} src={imgHeart.src} alt="" />
-                                    <Link href={`/${routeName}/${item.popular_name}`}>
+                                    <Link href={`/${routeName}/${item.popular_name.replaceAll(" ", "").toLowerCase()}`}>
                                         <img className={scss.right} src={imgRight.src} alt="" />
                                     </Link>
 

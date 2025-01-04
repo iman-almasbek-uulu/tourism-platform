@@ -10,6 +10,7 @@ import { useParams, useRouter } from 'next/navigation';
 
 const RegionPage = () => {
     const params = useParams()
+    console.log(params);
     
     
     return (

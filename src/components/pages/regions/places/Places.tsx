@@ -28,7 +28,6 @@ const Places = () => {
     dispatch(fetchRegions());
   }, [dispatch]);
 
-  console.log(routeName);
 
   const filteredRegion = regionsRT.find(
     (region: RegionData) =>
@@ -63,7 +62,7 @@ const Places = () => {
                     </div>
                   </div>
                   <img className={scss.heart} src={imgHeart.src} alt="" />
-                  <Link href={`/${regions}/${place.popular_name}`}>
+                  <Link href={`/${regions}/${place.popular_name.replaceAll(" ", "").toLowerCase()}`}>
                     <img className={scss.right} src={imgRight.src} alt="" />
                   </Link>
                 </div>

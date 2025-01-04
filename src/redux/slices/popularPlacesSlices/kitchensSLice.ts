@@ -1,13 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { HotelType } from "./types";
+import { Cafe } from "./types";
 import axios from "axios";
 import { getApiUrl } from "@/ui/getApi";
 
 
-export const fetchHotels= createAsyncThunk<HotelType[]>(
-    "hotels/fetchHotels", async (_, {rejectWithValue}) => {
+export const fetchKitchens= createAsyncThunk<Cafe[]>(
+    "kitchens/fetchKitchens", async (_, {rejectWithValue}) => {
         try {
-            const response = await axios.get(`${getApiUrl()}/hotels`);
+            const response = await axios.get(`${getApiUrl()}/kitchen`);
             
             return response.data;
         } catch (error: string | any) {
@@ -16,34 +16,33 @@ export const fetchHotels= createAsyncThunk<HotelType[]>(
 )
 
 interface initialStateType {
-    hotels: HotelType[];
+    kitchens: Cafe[];
     loading: boolean;
     error: string | any;
 }
 
 const initialState: initialStateType = {
-    hotels: [],
+    kitchens: [],
     loading: false,
     error: ""
 }
 
 const kitchensSlice = createSlice({
-    name: "hotels",
+    name: "kitchens",
     initialState,
     reducers: {},
     extraReducers: (builder) => {
-        builder.addCase(fetchHotels.pending, (state) => {
+        builder.addCase(fetchKitchens.pending, (state) => {
             state.loading = true;
         });
-        builder.addCase(fetchHotels.fulfilled, (state, action) => {
+        builder.addCase(fetchKitchens.fulfilled, (state, action) => {
             state.loading = false;
-            state.hotels = action.payload;
+            state.kitchens = action.payload;
         });
-        builder.addCase(fetchHotels.rejected, (state, action) => {
+        builder.addCase(fetchKitchens.rejected, (state, action) => {
             state.loading = false;
             state.error = action.error.message;
         });
     }
 })
-
 export default kitchensSlice.reducer;
