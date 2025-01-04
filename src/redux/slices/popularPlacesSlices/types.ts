@@ -4,6 +4,8 @@ export interface HotelType {
     hotel_image: string[]; 
     average_rating: number; 
     rating_count: number; 
+    region: string,
+    popular_places: string
 }
 
 export interface HotelItemType {
@@ -23,3 +25,43 @@ export interface HotelItemType {
     price_long_period: number; // Цена за длительный срок аренды
   }
   
+
+export interface Cafe {
+    id: number; 
+    kitchen_name: string; 
+    price: number; 
+    type_of_cafe: string[]; 
+    average_rating: number; 
+    rating_count: number; 
+    main_image: string; 
+}
+
+interface KitchenLocation {
+    id: number;
+    address: string;
+    Website: string;
+    email: string;
+    phone_number: string;
+    kitchen: string;
+  }
+
+export interface CafeItem {
+    id: number;
+    kitchen_name: string;
+    main_image: string | null;
+    kitchen_image: {
+      id: number;
+      image: string;
+    }[];
+    price: number;
+    specialized_menu: string;
+    meal_time: string[];
+    description: string;
+    average_rating: number;
+    rating_count: number;
+    nutrition_rating: number;
+    service_rating: number;
+    price_rating: number;
+    atmosphere_rating: number;
+    kitchen: KitchenLocation[];
+  }

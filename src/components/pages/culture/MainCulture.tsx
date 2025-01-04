@@ -16,8 +16,7 @@ const MainCulture = () => {
     <section className={styles.section}>
       <div className="container">
         <div className={styles.main}>
-          <div className={styles.media}></div>
-          {/* <img className={styles.background} src={Background.src} alt="" /> */}
+          <img className={styles.background} src={Background.src} alt="" />
           <div className={styles["main-text"]}>
               <h1 className={styles.heading}>Culture</h1>
               <p className={styles.descr}>

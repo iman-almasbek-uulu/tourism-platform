@@ -6,6 +6,9 @@ import popularPlacesItemReducer from "./slices/popularPlaceItemSlice"
 import hotelItemReducer from "./slices/popularPlacesSlices/hotelItemSlice"
 import hotelReducer from "./slices/popularPlacesSlices/hotelsSlice"
 import galleryReducer from "./slices/gallerySlices/gallerySlice"
+import kitchenReducer from "./slices/popularPlacesSlices/kitchensSLice"
+import kitchenItemReducer from "./slices/popularPlacesSlices/kitchenItemSlice"
+import cultureSliceReducer from "./slices/cultureSlices/cultureSlice"
 export const store = configureStore({
     reducer: {
         language: languageReducer,
@@ -14,7 +17,10 @@ export const store = configureStore({
         popularPlaceItem: popularPlacesItemReducer,
         hotels: hotelReducer,
         hotelItem: hotelItemReducer,
-        gallery: galleryReducer
+        gallery: galleryReducer,
+        kitchens: kitchenReducer,
+        kitchenItem:kitchenItemReducer,
+        cultureSlice: cultureSliceReducer
     }
 })
 

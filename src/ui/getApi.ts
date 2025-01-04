@@ -4,5 +4,5 @@ export const getApiUrl = (): string => {
     const baseUrl = `${process.env.NEXT_PUBLIC_API_URL}${lang}`;
     
     return baseUrl;
-  };
+};
   

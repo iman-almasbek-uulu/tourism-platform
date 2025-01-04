@@ -15,8 +15,7 @@ const Region = () => {
     const pathName = usePathname();
     const dispatch = useDispatch<AppDispatch>();
     const { regions, error, loading } = useSelector((state: RootState) => state.regions);
-    const routeName = pathName.split("/")[1];
-
+    const routeName = pathName.split("/")[1];    
     useEffect(() => {
         dispatch(fetchRegions());
     }, [dispatch]);
