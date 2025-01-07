@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import {Culture} from "./type";
+import {Culture} from "./types";
 import { getApiUrl } from "@/ui/getApi";
 
 

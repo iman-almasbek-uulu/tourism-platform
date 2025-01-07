@@ -1,17 +1,19 @@
 import UseTranslate from '@/ui/Translate';
 import scss from './Cafes.module.scss';
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Cafe } from '@/redux/slices/popularPlacesSlices/types';
+import Stars from '@/ui/stars/Stars';
 interface propsType {
     kitchens: Cafe[];
     loading: boolean;
     error: string | any;
-    isCurrent: number;
-    setIsCurrent: (id:number) => void
+    isCurrent: number | null; // Разрешаем null
+    setIsCurrent: (id: number | null) => void; // Изменяем тип функции
 }
 const Cafes: FC<propsType> = ({kitchens,loading,error,setIsCurrent}) => {
     const {t} = UseTranslate()
     const [isLimit, setIsLimit] = useState<number>(1)
+
 
 
     const data = kitchens.map((el,i) => (
@@ -20,13 +22,7 @@ const Cafes: FC<propsType> = ({kitchens,loading,error,setIsCurrent}) => {
             <div className={scss.info}>
                 <h6 className={scss.title}>{el.kitchen_name}</h6>
                 <div className={scss.stars_review}>
-                    <div className={scss.stars}>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
+                    <Stars rating={el.average_rating}/>
                     <p>Reviews: {el.rating_count}</p>
                 </div>
                 <div className={scss.prices}>

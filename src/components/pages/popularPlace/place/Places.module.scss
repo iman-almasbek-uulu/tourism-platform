@@ -11,7 +11,7 @@
     .region {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        align-items: center;
+        align-items: start;
         gap: 20px;
         @media (max-width: 834px) {
             display: flex;
@@ -19,6 +19,7 @@
         }
         .img {
             position: relative;
+            height: 382px;
             @media (max-width: 834px) {
                 position: absolute;
                 top: 0;

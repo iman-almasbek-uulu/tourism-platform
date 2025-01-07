@@ -1,0 +1,24 @@
+.stars {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 0px;
+
+    .starContainer {
+        width: 9px;
+        height: 9px;
+        background-color: rgba(60, 95, 99, 0.2);
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+
+        .starFill {
+            position: absolute;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: #3C5F63;
+            border-radius: 10px;
+        }
+    }
+}

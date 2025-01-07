@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import { fetchRegions } from "@/redux/slices/regionsSlice";
 import { RegionData } from "@/redux/slices/types";
 import { formatString } from "@/components/utils/utils";
+import Stars from "@/ui/stars/Stars";
 const Places = () => {
   const { regions } = useParams();
   const { t } = UseTranslate();
@@ -22,6 +23,7 @@ const Places = () => {
     loading,
   } = useSelector((state: RootState) => state.regions);
   const routeName = pathName.split("/")[1];
+  const stars = Array.from({ length: 5 }, (_, index) => index + 1);
 
 
   useEffect(() => {
@@ -42,7 +44,7 @@ const Places = () => {
       {filteredRegion ? (
         <section id={scss.Places}>
           <div className="container">
-            <h2>{t("", "", "")}</h2>
+            <h2>{t("", "", "Popular places")}</h2>
             <div className={scss.list}>
               {filteredRegion.popular_places.map((place, i) => (
                 <div key={i} className={scss.item}>
@@ -51,14 +53,10 @@ const Places = () => {
                     <h6>{formatString(t("", "", place.popular_name))}</h6>
                     <div>
                       <span className={scss.grade}>{place.avg_rating}</span>
-                      <span className={scss.stars}>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                      </span>
-                      <span className={scss.review}>23 434 reviews</span>
+                      <div className={scss.stars}>
+                        <Stars rating={place.avg_rating}/>
+                      </div>
+                      <span className={scss.review}>{place.rating_count} reviews</span>
                     </div>
                   </div>
                   <img className={scss.heart} src={imgHeart.src} alt="" />

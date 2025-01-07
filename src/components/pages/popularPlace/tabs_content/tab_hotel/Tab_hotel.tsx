@@ -15,6 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchHotels } from "@/redux/slices/popularPlacesSlices/hotelsSlice";
 import { fetchHotelItemSlice } from "@/redux/slices/popularPlacesSlices/hotelItemSlice";
 import { usePathname } from "next/navigation";
+import Stars from "@/ui/stars/Stars";
 
 const Tab_hotel = () => {
   const { t } = UseTranslate();
@@ -61,13 +62,7 @@ const Tab_hotel = () => {
                 <div className={scss.block}>
                   <h6>{formatString(t("", "", el.name))}</h6>
                   <div>
-                    <span className={scss.stars}>
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                    </span>
+                    <Stars rating={el.average_rating}/>
                     <span className={scss.review}>{el.rating_count} reviews</span>
                   </div>
                 </div>

@@ -8,7 +8,7 @@ import { getApiUrl } from "@/ui/getApi";
 export const fetchRegions = createAsyncThunk<RegionData[]>(
     "regions/fetchRegions", async (_,{rejectWithValue}) => {
         try {
-            const response = await axios.get(`${getApiUrl()}/region`);
+            const response = await axios.get(`${getApiUrl()}/region/`);
             return response.data;
             console.log(response.data);
             

@@ -12,17 +12,21 @@ import { FC, useEffect, useState } from 'react';
 import { fetchKitchenItemSlice } from '@/redux/slices/popularPlacesSlices/kitchenItemSlice';
 import { Cafe } from '@/redux/slices/popularPlacesSlices/types';
 import { usePathname } from 'next/navigation';
+import Stars from '@/ui/stars/Stars';
 interface propsType {    
     kitchens: Cafe[];
-    isCurrent: number
+    isCurrent: number | null
 }
 const Cafe_item: FC<propsType> = ({kitchens,isCurrent}) => {
     const dispatch = useDispatch<AppDispatch>()
     const {t} = UseTranslate()
+    const stars = Array.from({ length: 5 }, (_, index) => index + 1);
     const {kitchenItem,loading,error} = useSelector((state: RootState) => state.kitchenItem) 
     useEffect(() => {
-        dispatch(fetchKitchenItemSlice({id: isCurrent}))
-    },[dispatch])    
+        if (isCurrent !== null) {
+          dispatch(fetchKitchenItemSlice({ id: isCurrent }));
+        }
+    }, [isCurrent, dispatch]); 
     const pathName = usePathname();
     const routeName = pathName.split("/")[2];
      return (
@@ -37,16 +41,28 @@ const Cafe_item: FC<propsType> = ({kitchens,isCurrent}) => {
                             <h5>{t("Рейтинги и отзывы","التقييمات والمراجعات","Ratings and reviews")}</h5>
                             
                             <div className={scss.stars_review}>
-                                <div className={scss.grades}>{kitchenItem?.average_rating}</div>
-                                <div className={scss.stars}>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
+                            <div className={scss.grades}>{kitchenItem?.average_rating ?? 0}</div>
+                            <div className={scss.stars}>
+                                {stars.map((star) => (
+                                <div key={star} className={scss.starContainer}>
+                                    <div
+                                    className={scss.starFill}
+                                    style={{
+                                        width: `${
+                                        star <= (kitchenItem?.average_rating ?? 0)
+                                            ? 100
+                                            : star - (kitchenItem?.average_rating ?? 0) < 1
+                                            ? ((kitchenItem?.average_rating ?? 0) - (star - 1)) * 100
+                                            : 0
+                                        }%`,
+                                    }}
+                                    />
                                 </div>
-                                <p>{kitchenItem?.rating_count} {t("отзывы","مراجعات","reviews")}</p>
+                                ))}
                             </div>
+                            <p>{kitchenItem?.rating_count ?? 0} {t("отзывы","مراجعات","reviews")}</p>
+                            </div>
+
 
                             <div className={scss.assess}>
                                 <p>№ 1 <span>{t("","",`of ${kitchens.length} Restaurants in ${routeName}`)}</span></p>
@@ -60,13 +76,7 @@ const Cafe_item: FC<propsType> = ({kitchens,isCurrent}) => {
                                         <span>{t("","","Nutrition")}</span>
                                     </div>
                                     <div>
-                                        <div className={scss.stars}>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                        </div>
+                                        <Stars rating={kitchenItem?.nutrition_rating}/>
                                     </div>
                                 </li>
                                 <li>
@@ -74,13 +84,8 @@ const Cafe_item: FC<propsType> = ({kitchens,isCurrent}) => {
                                         <img src={icon2.src} alt="" />
                                         <span>{t("","","Service")}</span>
                                     </div>
-                                    <div className={scss.stars}>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                    </div>
+                                    <Stars rating={kitchenItem?.service_rating}/>
+
                                 </li>
                                 <li>
                                     <div>
@@ -88,13 +93,7 @@ const Cafe_item: FC<propsType> = ({kitchens,isCurrent}) => {
                                         <span>{t("","","Price quality")}</span>
                                     </div>
                                     <div>
-                                        <div className={scss.stars}>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                        </div>
+                                        <Stars rating={kitchenItem?.price_rating}/>
                                     </div>
                                 </li>
                                 <li>
@@ -103,13 +102,8 @@ const Cafe_item: FC<propsType> = ({kitchens,isCurrent}) => {
                                         <span>{t("","","Atmosphere")}</span>
                                     </div>
                                     <div>
-                                        <div className={scss.stars}>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                        </div>
+                                        <Stars rating={kitchenItem?.atmosphere_rating}/>
+
                                     </div>
                                 </li>
                             </ul>
