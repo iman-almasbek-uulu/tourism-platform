@@ -5,7 +5,7 @@ const Event_list = () => {
     return (
         <div className={scss.list}>
                 {Array.from({length: 12}, (_,i) => (
-                    <div className={scss.item}>
+                    <div key={i} className={scss.item}>
                         <div className={scss.img}>
                             <img src={ulukImg.src} alt="" />
                             <div className={scss.eventTabs}>

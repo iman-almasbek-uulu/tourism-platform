@@ -1,7 +1,6 @@
 import UseTranslate from '@/ui/Translate';
 import scss from './Places.module.scss'
 import groupPng from "@/images/Group.png"
-import imgCholpon from "@/images/cholpon.jpg"
 import { AppDispatch, RootState } from '@/redux/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';

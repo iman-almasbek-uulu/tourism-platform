@@ -7,6 +7,28 @@
         line-height: 86.34px;
         color: #004A60;
         margin-bottom: 30px;
+        @media (max-width: 1034px) {
+            font-size: 55px;
+            line-height:60.34px;
+        }
+        @media (max-width: 834px) {
+            font-size: 45px;
+            margin-top: 30px;
+            line-height:50.34px;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 634px) {
+            font-size: 35px;
+            line-height:40.34px;
+
+        }
+        @media (max-width: 480px) {
+            line-height:32.34px;
+            font-size: 30px;
+        }
+        @media (max-width: 390px) {
+            font-size: 24px;
+        }
     }   
 
 
@@ -64,17 +86,7 @@
                         line-height: 22.4px;
 
                     }
-                    .stars {
-                        display: flex;
-                        align-items: center;
-                        gap: 5px;
-                        span {
-                            width: 9px;
-                            height: 9px;
-                            background-color: #3C5F63;
-                            border-radius: 10px;
-                        }
-                    }
+                    
                     .review {
                         font-family: Montserrat;
                         font-size: 12px;

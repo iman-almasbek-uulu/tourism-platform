@@ -119,14 +119,28 @@
                     color: #242424;
                     
                 }
+
                 .stars {
                     display: flex;
+                    align-items: center;
                     gap: 3px;
-                    span {
+                
+                    .starContainer {
                         width: 16px;
                         height: 16px;
                         border-radius: 10px;
-                        background-color: #3C5F63;
+                        background-color: rgba(60, 95, 99, 0.2);
+                        position: relative;
+                        overflow: hidden;
+                
+                        .starFill {
+                            position: absolute;
+                            height: 100%;
+                            left: 0;
+                            top: 0;
+                            background-color: #3C5F63;
+                            border-radius: 10px;
+                        }
                     }
                 }
                 p {

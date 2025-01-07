@@ -1,6 +1,5 @@
 "use client"
 import scss from './Region.module.scss';
-import imgBlock from "@/images/Rectangle 142.jpg"
 import groupPng from "@/images/Group.png"
 import UseTranslate from '@/ui/Translate';
 import { AppDispatch, RootState } from '@/redux/store';
@@ -9,6 +8,7 @@ import { RegionData } from '@/redux/slices/types';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import { fetchRegions } from '@/redux/slices/regionsSlice';
+import { formatString } from '@/components/utils/utils';
 
 const Region = () => {
     const { t } = UseTranslate();
@@ -43,7 +43,7 @@ const Region = () => {
                                 </div>
                             </div>
                             <div className={scss.block}>    
-                                        <h2>{filteredRegion.region_name}</h2>
+                                        <h2>{formatString(filteredRegion.region_name)}</h2>
                                         <p>{
                                             filteredRegion.region_description.slice(0, 470) + "..."
                                         }</p>
@@ -53,7 +53,7 @@ const Region = () => {
                 </section>
             )
             : (                                
-                <p>{t("","","Region not found")}</p> // Сообщение, если регион не найден
+                <p>{t("","","Region not found")}</p>
             )}        
         </>
     );

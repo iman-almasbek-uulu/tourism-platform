@@ -9,11 +9,16 @@ import { useEffect, useState } from 'react';
 export const Tab_kitchen = () => {
     const dispatch = useDispatch<AppDispatch>();
     const { kitchens, loading, error } = useSelector((state: RootState) => state.kitchens);
-    const [currentId, setCurrentId] = useState<number>(() => kitchens[0]?.id ?? 1);
-  
+    const [currentId, setCurrentId] = useState<number | null>(null);
+
     useEffect(() => {
       dispatch(fetchKitchens());
     }, [dispatch]);
+    useEffect(() => {
+      if (kitchens.length > 0 && currentId === null) {
+        setCurrentId(kitchens[0].id);
+      }
+    }, [kitchens, currentId]);
   
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error: {error}</div>;

@@ -1,9 +1,6 @@
 "use client"
 import UseTranslate from "@/ui/Translate";
 import scss from "./Try.module.scss"
-import food1 from "@/images/food.jpg"
-import food2 from "@/images/food2.jpg"
-import food3 from "@/images/food3.jpg"
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
@@ -40,19 +37,13 @@ const Try = () => {
         {filteredRegion ? (
             <section id={scss.Try}>
                 <div className="container">
-                    <h2>{t("","",`What to try in ${filteredRegion.region_name}?`)}</h2>
+                    <h2>{t("","",`What to try in ${formatString(filteredRegion.region_name)}?`)}</h2>
                     <div className={scss.content}>
                             <div className={scss.item}>
-                                <h4>{t(
-                                    '',
-                                    '',
-                                    filteredRegion?.What_to_try[currentContent]?.to_name
-                                )}</h4>
-                                <p>{t(
-                                    '',
-                                    '',
-                                    filteredRegion?.What_to_try[currentContent]?.first_description,
-                                )}</p>
+                                <h4>{formatString(filteredRegion?.What_to_try[currentContent]?.to_name)}</h4>
+                                <p>{
+                                    formatString(filteredRegion?.What_to_try[currentContent]?.first_description)
+                                }</p>
                             </div>
                             <div className={scss.imgs}>
                                     <img src={filteredRegion?.What_to_try[currentContent]?.image} alt="" />

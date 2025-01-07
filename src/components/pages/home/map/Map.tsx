@@ -21,7 +21,7 @@ const Map = () => {
                     <div className={scss.block}>
                         <Link href="/batken">
                             <div className={`${scss.batken} ${scss.batken2}`}>
-                                <img src={imgYsyk.src} alt="batken" />
+                                <img src="https://www.discoverkyrgyzstan.org/sites/default/files/styles/hero/public/batken_1.jpg?itok=Cua5G9yF" alt="batken" />
                                 <p>{t("","","batken")}</p>
                             </div>
                             <svg className={scss.batken} viewBox="0 0 138 53" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +33,7 @@ const Map = () => {
                         </Link>
                         <Link href="/osh">
                             <div className={`${scss.osh} ${scss.osh2}`} >
-                                <img src={imgYsyk.src} alt="osh" />
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQlv0TMvEe8a8jXKk-30KiOyxJRCCtfu1peQ&s" alt="osh" />
                                 <p>{t("","","Osh")}</p>
                             </div>
                             <svg className={scss.osh}  viewBox="0 0 143 109" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,7 +45,7 @@ const Map = () => {
                         </Link>
                         <Link href="/jalal-abad">
                             <div className={`${scss.jalal} ${scss.jalal2}`} >
-                                <img src={imgYsyk.src} alt="jalal abad" />
+                                <img src="https://www.kyrgyzstantravel.com/cdn/kg-public/jalal_abad.jpg" alt="jalal abad" />
                                 <p>{t("","","jalal-abad")}</p>
                             </div>
                             <svg className={scss.jalal}  viewBox="0 0 192 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -57,7 +57,7 @@ const Map = () => {
                         </Link>
                         <Link href="/talas">
                             <div className={`${scss.talas} ${scss.talas2}`}>
-                                <img src={imgYsyk.src} alt="talas" />
+                                <img src="https://trvlland.com/wp-content/uploads/2020/02/kyrgyzstan_talas_152395691696115.jpg" alt="talas" />
                                 <p>{t("","","Talas")}</p>
                             </div>
                             <svg className={scss.talas}  viewBox="0 0 118 44" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,7 +66,7 @@ const Map = () => {
                         </Link>
                         <Link href="/chui">
                             <div className={`${scss.chui} ${scss.chui2}`}>
-                                <img src={imgYsyk.src} alt="chui" />
+                                <img src="https://st-1.akipress.org/st_limon/6/1410526078_0.jpg" alt="chui" />
                                 <p>{t("","","Chui")}</p>
                             </div>
                             <svg className={scss.chui}  viewBox="0 0 175 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -78,7 +78,7 @@ const Map = () => {
                         </Link>
                         <Link href="/naryn">
                             <div className={`${scss.naryn} ${scss.naryn2}`}>
-                                <img src={imgYsyk.src} alt="naryn" />
+                                <img src="https://trvlland.com/wp-content/uploads/2020/03/kyrgyzstan-naryn-1.jpg" alt="naryn" />
                                 <p>{t("","","Naryn")}</p>
                             </div>
                             <svg className={scss.naryn}  viewBox="0 0 190 121" fill="none" xmlns="http://www.w3.org/2000/svg">
